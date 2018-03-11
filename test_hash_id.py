@@ -42,10 +42,10 @@ def getheaders():
     sel = Selector(z1.text)
     jsdata = sel.css('div#data::attr(data-state)').extract_first()
     xudid = json.loads(jsdata)['token']['xUDID']
-    xsrf = json.loads(jsdata)['token']['xsrf']
+    # xsrf = json.loads(jsdata)['token']['xsrf']
     headers = headers_raw_to_dict(post_headers_raw)
     headers['X-UDID'] = xudid
-    headers['X-Xsrftoken'] = xsrf
+    # headers['X-Xsrftoken'] = xsrf
     return headers
 
 
